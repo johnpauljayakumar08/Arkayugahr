@@ -1,0 +1,9 @@
+{
+  "name": "Arkayuga HR Consulting",
+  "description": "A premium, corporate HR consulting website for Arkayuga, specializing in talent acquisition, recruitment, and strategic HR solutions across industries including IT, BFSI, Healthcare, and SAP.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
