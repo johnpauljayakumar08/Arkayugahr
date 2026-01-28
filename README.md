@@ -1,20 +1,33 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Arkayuga HR Consulting Website
 
-# Run and deploy your AI Studio app
+This is a premium, corporate HR consulting website built with React, TypeScript, and Tailwind CSS.
 
-This contains everything you need to run your app locally.
+## Getting Started Locally
 
-View your app in AI Studio: https://ai.studio/apps/drive/1H8oS4hTv0WwcTr9oKAEB_3OmPFycLNm0
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- npm (comes with Node.js)
 
-## Run Locally
+### Installation
 
-**Prerequisites:**  Node.js
+1. **Extract/Download** the project files to a folder.
+2. **Open Terminal** (Command Prompt or PowerShell) and navigate to the project folder.
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
+### Running the Website
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+To start the development server:
+```bash
+npm run dev
+```
+Once the command finishes, open your browser to `http://localhost:3000`.
+
+## Project Structure
+- `index.html`: Entry point.
+- `App.tsx`: Main routing and layout.
+- `components/`: Reusable UI components (Header, Footer, Logo).
+- `pages/`: Individual page views (Home, About, Services, Contact).
+- `constants.tsx`: Centralized content and service data.

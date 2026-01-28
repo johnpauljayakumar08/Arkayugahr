@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Linkedin, Facebook, Twitter } from 'lucide-react';
 import { BRAND_NAME } from '../constants.tsx';
+import Logo from './Logo.tsx';
 
 const Footer: React.FC = () => {
   return (
@@ -10,14 +11,8 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Info */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-lg bg-brand-maroon flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
-              <div>
-                <span className="text-xl font-display font-bold text-white block">ARKAYUGA</span>
-                <span className="text-[10px] tracking-[0.2em] font-medium block text-brand-gold">HR CONSULTING</span>
-              </div>
+            <Link to="/" className="flex items-center group">
+              <Logo variant="light" className="scale-90 origin-left" />
             </Link>
             <p className="text-gray-400 leading-relaxed">
               Arkayuga HR Consulting is committed to bridging the gap between skilled professionals and growing organizations across India.
