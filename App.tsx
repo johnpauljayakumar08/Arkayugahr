@@ -1,13 +1,13 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header.tsx';
-import Footer from './components/Footer.tsx';
-import Home from './pages/Home.tsx';
-import About from './pages/About.tsx';
-import Services from './pages/Services.tsx';
-import ServiceDetail from './pages/ServiceDetail.tsx';
-import Contact from './pages/Contact.tsx';
-import ScrollToTop from './components/ScrollToTop.tsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import ServiceDetail from './pages/ServiceDetail';
+import Contact from './pages/Contact';
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (

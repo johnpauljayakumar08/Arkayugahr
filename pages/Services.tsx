@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CORE_SERVICES, SECTOR_SERVICES } from '../constants.tsx';
+import { CORE_SERVICES, SECTOR_SERVICES } from '../constants';
 import { ArrowRight, ChevronRight, Briefcase, Zap, ShieldCheck } from 'lucide-react';
 
 const Services: React.FC = () => {

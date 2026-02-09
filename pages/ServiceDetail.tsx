@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { SECTOR_SERVICES } from '../constants.tsx';
+import { SECTOR_SERVICES } from '../constants';
 import { ArrowLeft, CheckCircle2, ChevronRight, Briefcase } from 'lucide-react';
 
 const ServiceDetail: React.FC = () => {
@@ -86,7 +86,7 @@ const ServiceDetail: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6">
           <h3 className="text-3xl font-display font-bold text-brand-maroon mb-12">Other Sectors We Serve</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {SECTOR_SERVICES.filter(s => s.id !== id).slice(0, 4).map((s) => (
+            {SECTOR_SERVICES.filter(s => s.id !== id).slice(0, 9).map((s) => (
               <Link key={s.id} to={`/services/${s.id}`} className="bg-white p-6 rounded-xl hover:shadow-md transition-all flex items-center justify-between group">
                 <span className="font-bold text-gray-700">{s.title}</span>
                 <ChevronRight className="w-5 h-5 text-brand-gold group-hover:translate-x-1 transition-all" />

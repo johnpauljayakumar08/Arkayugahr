@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronRight } from 'lucide-react';
-import Logo from './Logo.tsx';
 
+import logo from '../assest/ARKAYUGA_HR_CONSULTANCY.png'
+import logowhite from '../assest/whitelogo.png'
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,11 +29,13 @@ const Header: React.FC = () => {
   const isHome = location.pathname === '/';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || !isHome ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || !isHome ? 'bg-white shadow-lg py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <nav className="flex items-center justify-between">
-          <Link to="/" className="flex items-center group" onClick={closeMenu}>
-            <Logo variant={isScrolled || !isHome ? 'dark' : 'light'} />
+          <Link to="/" className="flex items-center group hover:scale-105 transition-transform duration-300" onClick={closeMenu}>
+            <div className={`flex items-center justify-center rounded-lg transition-all duration-300 ${isScrolled || !isHome ? ' px-3 py-1' : 'px-3 py-1'}`}>
+              <img src={isScrolled || !isHome ? logo : logowhite} alt="Arkayuga HR Consulting" className="h-24 md:h-28 lg:h-32 object-contain font-bold" />
+            </div>
           </Link>
 
           {/* Desktop Nav */}

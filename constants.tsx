@@ -15,7 +15,7 @@ import {
   ShieldCheck,
   Target
 } from 'lucide-react';
-import { ServiceCardProps } from './types.ts';
+import { ServiceCardProps } from './types';
 
 export const BRAND_NAME = "Arkayuga HR Consulting";
 

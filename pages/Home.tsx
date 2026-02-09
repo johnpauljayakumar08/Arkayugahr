@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react';
-import { SECTOR_SERVICES, WHY_CHOOSE_US } from '../constants.tsx';
+import { ArrowRight, CheckCircle2, ChevronRight, Heading6 } from 'lucide-react';
+import { SECTOR_SERVICES, WHY_CHOOSE_US } from '../constants';
 
 const Home: React.FC = () => {
   return (
@@ -21,9 +21,9 @@ const Home: React.FC = () => {
         {/* Content */}
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-3xl animate-fade-in pt-20">
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight mb-6">
+            <h6 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight mb-6">
               Empowering Businesses with the <span className="text-brand-gold italic">Right Talent</span>
-            </h1>
+            </h6>
             <h2 className="text-xl md:text-2xl text-gray-200 font-medium mb-8 max-w-2xl">
               Strategic HR Consulting & Recruitment Solutions Across Industries. Build your future-ready teams with Arkayuga.
             </h2>

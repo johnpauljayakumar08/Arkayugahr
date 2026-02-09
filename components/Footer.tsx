@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Linkedin, Facebook, Twitter } from 'lucide-react';
-import { BRAND_NAME } from '../constants.tsx';
-import Logo from './Logo.tsx';
+import { BRAND_NAME } from '../constants';
+import logo from '../assest/whitelogo.png';
 
 const Footer: React.FC = () => {
   return (
@@ -12,12 +12,12 @@ const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center group">
-              <Logo variant="light" className="scale-90 origin-left" />
+              <img src={logo} alt="Arkayuga HR Consulting" className="h-15 object-contain" />
             </Link>
             <p className="text-gray-400 leading-relaxed">
               Arkayuga HR Consulting is committed to bridging the gap between skilled professionals and growing organizations across India.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-maroon hover:text-white transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
               <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-maroon hover:text-white transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -60,15 +60,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-brand-gold mt-1 flex-shrink-0" />
-                <span>Pan-India Services, Corporate Office: New Delhi, India</span>
+                <span>Door no.29 ashok layout, civil aerodrome post, sitra, Coimbatore 641014</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-brand-gold flex-shrink-0" />
-                <span>+91 XXX XXX XXXX</span>
+                <span>+91 9962999819</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-brand-gold flex-shrink-0" />
-                <span>info@arkayugahr.com</span>
+                <span>info@arkayuga.com</span>
               </li>
             </ul>
           </div>

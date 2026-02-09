@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Loader2 } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
     name: '',
@@ -12,16 +14,36 @@ const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
+    setError('');
+
+    try {
+      const response = await fetch(`${API_URL}/api/contacts`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formState)
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+        setFormState({ name: '', email: '', phone: '', company: '', message: '' });
+      } else {
+        setError(data.error || 'Failed to submit form');
+      }
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setError('Failed to connect to server. Please try again later.');
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormState({ name: '', email: '', phone: '', company: '', message: '' });
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -52,7 +74,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <p className="font-bold text-gray-900">Our Location</p>
-                      <p className="text-gray-600">Pan-India Reach, Delhi Office</p>
+                      <p className="text-gray-600">Door no.29 ashok layout, civil aerodrome post, sitra, Coimbatore 641014</p>
                     </div>
                   </div>
 
@@ -62,7 +84,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <p className="font-bold text-gray-900">Phone</p>
-                      <p className="text-gray-600">+91 XXX XXX XXXX</p>
+                      <p className="text-gray-600">+91 9962999819</p>
                     </div>
                   </div>
 
@@ -72,7 +94,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <p className="font-bold text-gray-900">Email</p>
-                      <p className="text-gray-600">info@arkayugahr.com</p>
+                      <p className="text-gray-600">info@arkayuga.com</p>
                     </div>
                   </div>
 
@@ -109,6 +131,11 @@ const Contact: React.FC = () => {
                 ) : (
                   <>
                     <h3 className="text-3xl font-display font-bold text-brand-maroon mb-8">Send Your Requirement</h3>
+                    {error && (
+                      <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                        {error}
+                      </div>
+                    )}
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-1">
@@ -199,7 +226,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Map Section Placeholder */}
-      <section className="h-[400px] bg-gray-200 relative group">
+      {/* <section className="h-[400px] bg-gray-200 relative group">
         <div className="absolute inset-0 bg-brand-maroon/5 flex items-center justify-center">
            <div className="text-center">
               <MapPin className="w-12 h-12 text-brand-maroon mx-auto mb-4" />
@@ -207,7 +234,7 @@ const Contact: React.FC = () => {
               <p className="text-gray-500">Pan-India Recruitment Network Active</p>
            </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
