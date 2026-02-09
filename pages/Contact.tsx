@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Loader2 } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || '';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch(`${API_URL}/api/contacts`, {
+      const response = await fetch('https://arkayugadigitalagency.com/apihr/contacts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
